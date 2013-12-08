@@ -1,0 +1,46 @@
+<% include header.ejs %>
+  
+  <div id="container" class="container">
+
+    <% include search_form.ejs %>
+    
+
+    <div class="panel panel-default">
+      <div class="alert alert-success">搜索  <%=s_name%> 的结果：</div>
+      
+      <% if (all.length == 0) {%>
+        <div class="alert alert-danger">抱歉没有搜到 尝试换一个名字搜索试试看<a href="/re_init_file_path">重新生成素材路径 试试</a></div>
+      <% } %>
+      
+      <% if (all.length > 20) {%>
+        <div class="alert alert-info">搜索到的结果太多了？尝试加加路径试试看 点击搜索框后面的搜索类型看看选择对应的类型后再搜索</div>
+      <% } %>
+      
+      <div class="panel-body"></div>
+      <!-- Table-->
+      <table class="table">
+        <thead>
+          <tr>
+            <th> </th>
+            <th>文件名</th>
+            <th>路径</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for(var i=0; i<all.length; i++) {%>
+            <% var file = all[i]  %>
+            <% var url =  'http://10.1.8.94:8080/job/seer-as/ws/' + file.path %>
+            <tr>
+              <td><%= i+1 %> </td>
+              <td><%= file.name %></td>
+              <td>
+                <a href=http://10.1.8.94:8080/job/client/ws/<%= file.path%> target="_blank" ><%=file.path%></a> 
+              </td>
+            </tr>
+
+          <% }  %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+<% include footer.ejs %>

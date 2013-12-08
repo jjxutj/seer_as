@@ -1,0 +1,9 @@
+{
+    "任务表": "RobotCore/config/tasks.xml",
+    "精灵表": "/RobotCore/config/monsters.xml",
+    "物品表": "/RobotCore/config/items.xml",
+    "成就表": "/RobotCore/config/achievements.xml",
+    "地图": "/RobotCore/config/map_config.xml",
+    "技能表": "RobotCore/config/moves.xml",
+    "刻印表": "RobotCore/config/mintmark.xml"
+}
